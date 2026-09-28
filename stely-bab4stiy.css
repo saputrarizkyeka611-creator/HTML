@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #2C3E50;
+    background-color: #F2F3F4;
+}
+
+/* ----- SELECTOR ELEMEN ----- */
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #1A3274;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #A2D9F1;
+    padding-bottom: 6px;
+}
+
+p {
+    margin-bottom: 8px;
+    text-align: justify;
+}
+
+code {
+    background-color: #E2F3FB;
+    color: #1A3274;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
