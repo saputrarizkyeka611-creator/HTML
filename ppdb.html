@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPDB SMK TJP Tuban</title>
+
+    <style>
+        :root {
+            --utama: #0756b5;
+            --gelap: #07336b;
+            --terang: #eaf3ff;
+            --putih: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #222;
+        }
+
+        /* NAVBAR */
+        header {
+            background: var(--utama);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h2 {
+            font-size: 21px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 500px;
+            background: linear-gradient(120deg, #07336b, #1686e8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            animation: muncul 1s ease;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .tombol {
+            background: #ffd700;
+            color: #07336b;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* SECTION */
+        section {
+            padding: 65px 7%;
+            text-align: center;
+        }
+
+        section h2 {
+            color: var(--gelap);
+            margin-bottom: 30px;
+        }
+
+        /* STATISTIK */
+        .statistik {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 220px;
+            box-shadow: 0 3px 12px #0002;
+        }
+
+        .stat h3 {
+            color: var(--utama);
+            font-size: 30px;
+        }
+
+        /* KARTU JURUSAN */
+        .kartu-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .kartu {
+            background: white;
+            padding: 30px 20px;
+            width: 260px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0002;
+            transition: 0.3s;
+        }
+
+        .kartu:hover {
+            transform: translateY(-8px);
+        }
+
+        .kartu h3 {
+            color: var(--utama);
+            margin-bottom: 12px;
+        }
+
+        /* TABEL */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: var(--utama);
+            color: white;
+        }
+
+        /* FORM */
+        form {
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0002;
+            text-align: left;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background: var(--utama);
+            color: white;
+            padding: 13px;
+            border: none;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--gelap);
+        }
+
+        /* MAPS */
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        footer {
+            background: var(--gelap);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE HP */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .stat {
+                width: 100%;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <h2>SMK TJP TUBAN</h2>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#jurusan">Jurusan</a>
+        <a href="#jadwal">Jadwal</a>
+        <a href="#daftar">Daftar</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="beranda">
+    <h1>PPDB SMK TJP TUBAN</h1>
+    <p>Penerimaan Peserta Didik Baru Tahun Ajaran 2027/2028</p>
+    <p>Wujudkan Masa Depan Bersama SMK TJP Tuban!</p>
+
+    <a href="#daftar" class="tombol">DAFTAR SEKARANG</a>
+</div>
+
+<!-- STATISTIK -->
+<section>
+    <h2>Informasi PPDB</h2>
+
+    <div class="statistik">
+        <div class="stat">
+            <h3>3</h3>
+            <p>Program Keahlian</p>
+        </div>
+
+        <div class="stat">
+            <h3>500+</h3>
+            <p>Kuota Siswa</p>
+        </div>
+
+        <div class="stat">
+            <h3>100%</h3>
+            <p>Semangat Belajar</p>
+        </div>
+    </div>
+</section>
+
+<!-- JURUSAN -->
+<section id="jurusan">
+    <h2>Pilihan Program Keahlian</h2>
+
+    <div class="kartu-container">
+
+        <div class="kartu">
+            <h3>RPL</h3>
+            <p>Rekayasa Perangkat Lunak</p>
+            <p>Belajar membuat website, aplikasi, dan program komputer.</p>
+        </div>
+
+        <div class="kartu">
+            <h3>TKJ</h3>
+            <p>Teknik Komputer dan Jaringan</p>
+            <p>Belajar jaringan komputer dan teknologi internet.</p>
+        </div>
+
+        <div class="kartu">
+            <h3>DKV</h3>
+            <p>Desain Komunikasi Visual</p>
+            <p>Belajar desain grafis, ilustrasi, dan multimedia.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- JADWAL -->
+<section id="jadwal">
+    <h2>Jalur dan Jadwal Seleksi</h2>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Jalur Pendaftaran</th>
+            <th>Jadwal</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Jalur Reguler</td>
+            <td>Januari - Maret 2027</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Jalur Prestasi</td>
+            <td>April 2027</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Daftar Ulang</td>
+            <td>Mei 2027</td>
+        </tr>
+    </table>
+</section>
+
+<!-- FORMULIR -->
+<section id="daftar">
+    <h2>Formulir Pendaftaran Online</h2>
+
+    <form id="formPPDB">
+
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama"
+               placeholder="Masukkan nama lengkap" required>
+
+        <label>NISN</label>
+        <input type="number" id="nisn"
+               placeholder="Masukkan NISN" required>
+
+        <label>Asal Sekolah</label>
+        <input type="text" placeholder="Asal SMP/MTS" required>
+
+        <label>Jenis Kelamin</label>
+        <select required>
+            <option value="">Pilih jenis kelamin</option>
+            <option>Laki-laki</option>
+            <option>Perempuan</option>
+        </select>
+
+        <label>Pilihan Jurusan</label>
+        <select required>
+            <option value="">Pilih jurusan</option>
+            <option>RPL</option>
+            <option>TKJ</option>
+            <option>DKV</option>
+        </select>
+
+        <label>Alamat</label>
+        <textarea placeholder="Masukkan alamat lengkap"
+                  required></textarea>
+
+        <button type="submit">Kirim Pendaftaran</button>
+
+    </form>
+</section>
+
+<!-- LOKASI -->
+<section>
+    <h2>Lokasi Sekolah</h2>
+
+    <p>SMK TJP Tuban</p>
+
+    <iframe
+        src="https://www.google.com/maps?q=SMK%20TJP%20Tuban&output=embed"
+        loading="lazy">
+    </iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2027 PPDB SMK TJP Tuban</p>
+    <p>Website Penerimaan Peserta Didik Baru</p>
+</footer>
+
+<script>
+    document.getElementById("formPPDB")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let nama = document.getElementById("nama").value;
+
+        alert("Terima kasih " + nama +
+        "! Data pendaftaran berhasil dikirim pada demo ini.");
+
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
